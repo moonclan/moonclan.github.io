@@ -2,7 +2,7 @@ let date = new Date()
 let month = date.getMonth();
 //определение сезона
   if (month == 11 || month == 0 || month == 1) {
-    document.body.style = "background-image: url('/garbage/img/winter.png');"
+    document.body.style = "background-image: url('/garbage/img/winter1.png');"
   }
   if (month == 2 || month == 3 || month == 4) {
     document.body.style = "background-image: url('/garbage/img/spring.png');"
