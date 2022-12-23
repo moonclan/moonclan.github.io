@@ -1,8 +1,8 @@
 const SCALE = 2;
 const WIDTH = 75;
 const HEIGHT = 80;
-const SCALED_WIDTH = SCALE * WIDTH;
-const SCALED_HEIGHT = SCALE * HEIGHT;
+const SCALED_WIDTH = 20;
+const SCALED_HEIGHT = 20;
 const CYCLE_LOOP = [0, 1, 0, 2];
 const FACING_DOWN = 0;
 const FACING_UP = 1;
@@ -29,6 +29,8 @@ function keyUpListener(event) {
 }
 function loadImage() {
   img.src = 'https://i.ibb.co/qxMczB0/spritesheet.png';
+  img.height = '80px;';
+  img.width = "75px !important;";
   img.onload = function () {
     window.requestAnimationFrame(gameLoop);
   };
