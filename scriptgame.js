@@ -1,6 +1,6 @@
 const SCALE = 2;
-const WIDTH = 16;
-const HEIGHT = 18;
+const WIDTH = 75;
+const HEIGHT = 80;
 const SCALED_WIDTH = SCALE * WIDTH;
 const SCALED_HEIGHT = SCALE * HEIGHT;
 const CYCLE_LOOP = [0, 1, 0, 2];
@@ -28,10 +28,11 @@ function keyUpListener(event) {
   keyPresses[event.key] = false;
 }
 function loadImage() {
-  img.src = 'https://opengameart.org/sites/default/files/Green-Cap-Character-16x18.png';
+  img.src = 'https://i.ibb.co/qxMczB0/spritesheet.png';
   img.onload = function () {
     window.requestAnimationFrame(gameLoop);
   };
+  console.log('loadImage')
 }
 function drawFrame(frameX, frameY, canvasX, canvasY) {
   ctx.drawImage(img,
@@ -45,9 +46,11 @@ function gameLoop() {
   if (keyPresses.w) {
     moveCharacter(0, -MOVEMENT_SPEED, FACING_UP);
     hasMoved = true;
+    console.log('loadImage')
   } else if (keyPresses.s) {
     moveCharacter(0, MOVEMENT_SPEED, FACING_DOWN);
     hasMoved = true;
+    console.log('loadImage')
   }
   if (keyPresses.a) {
     moveCharacter(-MOVEMENT_SPEED, 0, FACING_LEFT);
