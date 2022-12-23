@@ -1,8 +1,8 @@
 const SCALE = 2;
 const WIDTH = 75;
 const HEIGHT = 80;
-const SCALED_WIDTH = 20;
-const SCALED_HEIGHT = 20;
+const SCALED_WIDTH = 90;
+const SCALED_HEIGHT = 90;
 const CYCLE_LOOP = [0, 1, 0, 2];
 const FACING_DOWN = 0;
 const FACING_UP = 1;
