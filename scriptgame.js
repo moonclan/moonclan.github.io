@@ -29,8 +29,6 @@ function keyUpListener(event) {
 }
 function loadImage() {
   img.src = 'https://i.ibb.co/qxMczB0/spritesheet.png';
-  img.height = '80px;';
-  img.width = "75px !important;";
   img.onload = function () {
     window.requestAnimationFrame(gameLoop);
   };
