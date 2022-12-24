@@ -19,6 +19,10 @@ let frameCount = 0;
 let positionX = 0;
 let positionY = 0;
 let img = new Image();
+var curr_lok = 1;
+if (curr_lok == 1) {
+  canvas.style = 'background-image: url("https://i.ibb.co/Y2YRx8S/back.png")';
+}
 window.addEventListener('keydown', keyDownListener);
 function keyDownListener(event) {
   keyPresses[event.key] = true;
@@ -42,6 +46,15 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
 loadImage();
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (curr_lok == 1) {
+    base_image = new Image();
+    base_image.src = 'https://i.ibb.co/L0VCXbX/missSown.png';
+    ctx.drawImage(base_image, 50, 70, 35, 35);
+    if (positionX > 24 && positionX < 70 && positionY > 53 && positionY < 87) {
+       positionX = positionX - 1;
+      positionY = positionY - 1;
+
+    }
   let hasMoved = false;
 /*document.addEventListener('keypress', function(event){
     if(event.key == 'w') {
