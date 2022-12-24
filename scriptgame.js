@@ -8,7 +8,7 @@ const FACING_DOWN = 0;
 const FACING_UP = 1;
 const FACING_LEFT = 2;
 const FACING_RIGHT = 3;
-const FRAME_LIMIT = 12;
+const FRAME_LIMIT = 32;
 const MOVEMENT_SPEED = 1;
 let canvas = document.querySelector('canvas');
 let ctx = canvas.getContext('2d');
@@ -23,6 +23,7 @@ var curr_lok = 1;
 if (curr_lok == 1) {
   canvas.style = 'background-image: url("https://i.ibb.co/Y2YRx8S/back.png")';
 }
+
 window.addEventListener('keydown', keyDownListener);
 function keyDownListener(event) {
   keyPresses[event.key] = true;
@@ -36,7 +37,6 @@ function loadImage() {
   img.onload = function () {
     window.requestAnimationFrame(gameLoop);
   };
-  console.log('loadImage')
 }
 function drawFrame(frameX, frameY, canvasX, canvasY) {
   ctx.drawImage(img,
@@ -44,36 +44,39 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
     canvasX, canvasY, SCALED_WIDTH, SCALED_HEIGHT);
 }
 loadImage();
+function openBox() {
+  var div = document.createElement('div');
+  div.innerHTML = "ghbdtn"
+  div.style = "display: block";
+  document.body.appendChild(div);
+}
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (curr_lok == 1) {
+  if (curr_lok == 1) {
     base_image = new Image();
     base_image.src = 'https://i.ibb.co/L0VCXbX/missSown.png';
     ctx.drawImage(base_image, 50, 70, 35, 35);
     if (positionX > 24 && positionX < 70 && positionY > 53 && positionY < 87) {
-       positionX = positionX - 1;
+      positionX = positionX - 1;
       positionY = positionY - 1;
-
+      console.log(positionY)
     }
-  let hasMoved = false;
-/*document.addEventListener('keypress', function(event){
-    if(event.key == 'w') {
-    moveCharacter(0, -MOVEMENT_SPEED, FACING_UP);
-    hasMoved = true;
-    } else if (event.key == 's') {
-    moveCharacter(0, MOVEMENT_SPEED, FACING_DOWN);
-    hasMoved = true;
-    console.log('loadImage')
+    if (positionX > 20 && positionX < 60 && positionY > 50 && positionY < 70) {
+      document.addEventListener('keypress', function (event) {
+       if(event.key == 'e') {
+         openBox()
+         console.log('dd')
+       }
+    })
+    }
   }
-});*/
- if (keyPresses.w) {
+  let hasMoved = false;
+  if (keyPresses.w) {
     moveCharacter(0, -MOVEMENT_SPEED, FACING_UP);
     hasMoved = true;
-    console.log('loadImage')
   } else if (keyPresses.s) {
     moveCharacter(0, MOVEMENT_SPEED, FACING_DOWN);
     hasMoved = true;
-    console.log('loadImage')
   }
   if (keyPresses.a) {
     moveCharacter(-MOVEMENT_SPEED, 0, FACING_LEFT);
@@ -81,7 +84,6 @@ function gameLoop() {
   } else if (keyPresses.d) {
     moveCharacter(MOVEMENT_SPEED, 0, FACING_RIGHT);
     hasMoved = true;
-    console.log('down')
   }
   if (hasMoved) {
     frameCount++;
@@ -113,4 +115,4 @@ let titleElem = menuElem.querySelector('.title');
 
 titleElem.onclick = function () {
   menuElem.classList.toggle('open');
-}}; 
+}; 
