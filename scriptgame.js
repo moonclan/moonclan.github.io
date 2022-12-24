@@ -58,6 +58,7 @@ function gameLoop() {
   } else if (keyPresses.d) {
     moveCharacter(MOVEMENT_SPEED, 0, FACING_RIGHT);
     hasMoved = true;
+    console.log('down')
   }
   if (hasMoved) {
     frameCount++;
