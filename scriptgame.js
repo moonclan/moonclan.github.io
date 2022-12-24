@@ -43,7 +43,17 @@ loadImage();
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   let hasMoved = false;
-  if (keyPresses.w) {
+document.addEventListener('keydown', function(event){
+    if(event.key == 'w') {
+    moveCharacter(0, -MOVEMENT_SPEED, FACING_UP);
+    hasMoved = true;
+    } else if (event.key == 's') {
+    moveCharacter(0, MOVEMENT_SPEED, FACING_DOWN);
+    hasMoved = true;
+    console.log('loadImage')
+  }
+});
+/*  if (keyPresses.w) {
     moveCharacter(0, -MOVEMENT_SPEED, FACING_UP);
     hasMoved = true;
     console.log('loadImage')
@@ -51,7 +61,7 @@ function gameLoop() {
     moveCharacter(0, MOVEMENT_SPEED, FACING_DOWN);
     hasMoved = true;
     console.log('loadImage')
-  }
+  }*/
   if (keyPresses.a) {
     moveCharacter(-MOVEMENT_SPEED, 0, FACING_LEFT);
     hasMoved = true;
