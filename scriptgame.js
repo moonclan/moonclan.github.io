@@ -43,7 +43,7 @@ loadImage();
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   let hasMoved = false;
-document.addEventListener('keydown', function(event){
+document.addEventListener('keypress', function(event){
     if(event.key == 'w') {
     moveCharacter(0, -MOVEMENT_SPEED, FACING_UP);
     hasMoved = true;
