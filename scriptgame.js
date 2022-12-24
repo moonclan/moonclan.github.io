@@ -23,15 +23,8 @@ var curr_lok = 1;
 if (curr_lok == 1) {
   canvas.style = 'background-image: url("https://i.ibb.co/Y2YRx8S/back.png")';
 }
+var hell = true;
 
-window.addEventListener('keydown', keyDownListener);
-function keyDownListener(event) {
-  keyPresses[event.key] = true;
-}
-window.addEventListener('keyup', keyUpListener);
-function keyUpListener(event) {
-  keyPresses[event.key] = false;
-}
 function loadImage() {
   img.src = 'https://i.ibb.co/qxMczB0/spritesheet.png';
   img.onload = function () {
@@ -44,12 +37,43 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
     canvasX, canvasY, SCALED_WIDTH, SCALED_HEIGHT);
 }
 loadImage();
-function openBox() {
-  var div = document.createElement('div');
-  div.innerHTML = "ghbdtn"
+function openBox1Sown(asr) { 
+   var div = document.createElement('div');
+  if (asr == 1) {
+    var inn = 'Привет, как тебя зовут?'
+  }
+  if (asr == 2) {
+    var inn = 'Я - Северная, а тебя как зовут?';
+    var sty = "color: blue;"
+    div.style = "color: blue !important;"
+  }
+  if( hell == true) {
+
+  div.innerHTML = inn
   div.style = "display: block";
+  div.style = sty
   document.body.appendChild(div);
-}
+  }
+  if (hell == false) {
+    return true
+
+
+  }
+
+}      var co = 1 
+document.addEventListener('keyup', function (event) {
+  if (positionX > 20 && positionX < 60 && positionY > 50 && positionY < 70) { 
+    if (event.key == 'e') {
+
+       
+      openBox1Sown(co)
+      co++
+    }
+  }
+  })
+
+  
+
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   if (curr_lok == 1) {
@@ -61,14 +85,15 @@ function gameLoop() {
       positionY = positionY - 1;
       console.log(positionY)
     }
-    if (positionX > 20 && positionX < 60 && positionY > 50 && positionY < 70) {
-      document.addEventListener('keypress', function (event) {
-       if(event.key == 'e') {
-         openBox()
-         console.log('dd')
-       }
-    })
-    }
+
+  }
+  window.addEventListener('keydown', keyDownListener);
+  function keyDownListener(event) {
+    keyPresses[event.key] = true;
+  }
+  window.addEventListener('keyup', keyUpListener);
+  function keyUpListener(event) {
+    keyPresses[event.key] = false;
   }
   let hasMoved = false;
   if (keyPresses.w) {
@@ -101,6 +126,7 @@ function gameLoop() {
   drawFrame(CYCLE_LOOP[currentLoopIndex], currentDirection, positionX, positionY);
   window.requestAnimationFrame(gameLoop);
 }
+hell = true;
 function moveCharacter(deltaX, deltaY, direction) {
   if (positionX + deltaX > 0 && positionX + SCALED_WIDTH + deltaX < canvas.width) {
     positionX += deltaX;
