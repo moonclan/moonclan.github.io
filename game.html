@@ -33,13 +33,48 @@
 		top: 50%;
 		transform: translateY(-50%) translateX(50%);
 
+		}		.menu ul {
+		margin: 0;
+		list-style: none;
+		padding-left: 20px;
+		display: none;
 		}
-  
-  
-  </style>
+		
+		.menu .title {
+		font-size: 18px;
+		cursor: pointer;
+		}
+		
+		.menu .title::before {
+		content: '▶ ';
+		font-size: 80%;
+		color: green;
+		}
+		
+		.menu.open .title::before {
+		content: '▼ ';
+		}
+		
+		.menu.open ul {
+		display: block;
+		}
+	</style>
 </head>
-<body>
 
+<body >
+  <table><tr><td><div class="diff" id="cli" onclick="click()"><div id="sweeties" class="menu">
+<span class="title">Обучение</span>
+<ul>
+	<li>Ходить - wasd</li>
+	<li>Говорить/взаимодействовать - английская e</li>
+	<li>Перемещаться по локациям - undefined</li>
+	<li>Как проходить игру - разбирайтесь сами пж</li>
+</ul></div></td><td>
+
+	</td>
+	<td>
+</td></tr>
+<p style="text-align: center;">Действия</p>
 <canvas id="canvas" style="background: url('https://i.ibb.co/Y2YRx8S/back.png')">Твой браузер не поддерживает canvas. Но зато теперь ты знаешь, что совы держат у себя в дуплах слепых змей.</canvas>
 <script src="scriptgame.js"></script>
 </body>
