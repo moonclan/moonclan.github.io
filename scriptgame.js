@@ -19,12 +19,14 @@ let frameCount = 0;
 let positionX = 0;
 let positionY = 0;
 let img = new Image();
+var hell = true;
 var curr_lok = 1;
 if (curr_lok == 1) {
   canvas.style = 'background-image: url("https://i.ibb.co/Y2YRx8S/back.png")';
 }
-var hell = true;
-
+else if (curr_lok == 2) {
+  canvas.style = 'background-image: url("https://sun4-16.userapi.com/impg/5g99O0fCEdYfA-zIrt1Lz9sAac2py9vcmz891Q/Gr3lK2h0cZY.jpg?size=676x592&quality=96&sign=c9478eaeda69a19aa4e1a8a292a6ad83&type=album")';
+} 
 function loadImage() {
   img.src = 'https://i.ibb.co/qxMczB0/spritesheet.png';
   img.onload = function () {
@@ -37,8 +39,8 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
     canvasX, canvasY, SCALED_WIDTH, SCALED_HEIGHT);
 }
 loadImage();
-function openBox1Sown(asr) { 
-   var div = document.createElement('div');
+function openBox1Sown(asr) {
+  var div = document.createElement('div');
   if (asr == 1) {
     var inn = 'Привет, как тебя зовут?'
   }
@@ -47,12 +49,12 @@ function openBox1Sown(asr) {
     var sty = "color: blue;"
     div.style = "color: blue !important;"
   }
-  if( hell == true) {
+  if (hell == true) {
 
-  div.innerHTML = inn
-  div.style = "display: block";
-  div.style = sty
-  document.body.appendChild(div);
+    div.innerHTML = inn
+    div.style = "display: block";
+    div.style = sty
+    document.body.appendChild(div);
   }
   if (hell == false) {
     return true
@@ -60,19 +62,26 @@ function openBox1Sown(asr) {
 
   }
 
-}      var co = 1 
+} var co = 1
 document.addEventListener('keyup', function (event) {
-  if (positionX > 20 && positionX < 60 && positionY > 50 && positionY < 70) { 
+  if (positionX > 20 && positionX < 60 && positionY > 50 && positionY < 70) {
     if (event.key == 'e') {
-
-       
       openBox1Sown(co)
       co++
     }
   }
-  })
+})
+document.addEventListener('keyup', function (event) {
+  if (positionX > 110 && positionX < 170 && positionY > 1 && positionY < 70) {
+    console.log('loc')
+    if (event.key == 'q') {
+      curr_lok = 2;
+      canvas.style = 'background-image: url("https://sun4-16.userapi.com/impg/5g99O0fCEdYfA-zIrt1Lz9sAac2py9vcmz891Q/Gr3lK2h0cZY.jpg?size=676x592&quality=96&sign=c9478eaeda69a19aa4e1a8a292a6ad83&type=album")';
+    }
+  }
+})
 
-  
+
 
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -109,6 +118,8 @@ function gameLoop() {
   } else if (keyPresses.d) {
     moveCharacter(MOVEMENT_SPEED, 0, FACING_RIGHT);
     hasMoved = true;
+    console.log('sdsa')
+
   }
   if (hasMoved) {
     frameCount++;
@@ -126,7 +137,6 @@ function gameLoop() {
   drawFrame(CYCLE_LOOP[currentLoopIndex], currentDirection, positionX, positionY);
   window.requestAnimationFrame(gameLoop);
 }
-hell = true;
 function moveCharacter(deltaX, deltaY, direction) {
   if (positionX + deltaX > 0 && positionX + SCALED_WIDTH + deltaX < canvas.width) {
     positionX += deltaX;
