@@ -92,7 +92,18 @@ if (asr == 2) {
     var inn = 'О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
     var sty = "color: blue;"
   }
-         if (asr > 8) {
+       if (asr == 9) {
+    let name = localStorage.getItem('name');
+    var inn = 'Хорошо. Тебе что-нибудь нужно?';
+    var sty = " "
+  }
+       if (asr == 10) {
+    let name = localStorage.getItem('name');
+    var inn = 'Спасибо, но я полежу здесь. Небо красивое. А ты беги за Острозвёздом, ' + name;
+    var sty = "color: blue;"
+  }
+        
+         if (asr > 9) {
     let name = localStorage.getItem('name');
     var inn = 'Погодка сегодня неплохая.';
     var sty = "color: blue;"
