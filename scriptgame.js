@@ -60,6 +60,18 @@ if (asr == 2) {
         localStorage.setItem('name', lol); } });
 
   }  
+   function who() {
+    let name = localStorage.getItem('name');
+    var inn = 'Неужто забыл? Я - старейшина Грозового племени, или ты и себя не помнишь?';
+    var sty = "color: blue;"
+    asr = 8;
+      }
+      function where() {
+    let name = localStorage.getItem('name');
+    var inn = 'Память потерял? Мы в Песчаном овраге.';
+    var sty = "color: blue;"
+    asr = 8;
+    }
   if (asr == 4) {
     let name = localStorage.getItem('name');
     var inn = 'Ну вот, ' + name +'. Что же ты хочешь узнать?';
@@ -71,22 +83,7 @@ if (asr == 2) {
     var inn = '<button onclick="who()">Кто ты?</button><button onclick="where()">Где мы?</button>';
       
     var sty = " "
-  }       function who() {
-       asr = 6
-    if (asr == 6) {
-    let name = localStorage.getItem('name');
-    var inn = 'Неужто забыл? Я - старейшина Грозового племени, или ты и себя не помнишь?';
-    var sty = "color: blue;"
-    asr = 8
-  }
-      }
-      function where() {
-       asr = 7   
-        if (asr == 7) {
-    let name = localStorage.getItem('name');
-    var inn = 'Память потерял? Мы в Песчаном овраге.';
-    var sty = "color: blue;"
-      }
+  }      
 
  
   }
