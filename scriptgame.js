@@ -115,6 +115,7 @@ function gameLoop() {
   if (keyPresses.a) {
     moveCharacter(-MOVEMENT_SPEED, 0, FACING_LEFT);
     hasMoved = true;
+        console.log('sdsa')
   } else if (keyPresses.d) {
     moveCharacter(MOVEMENT_SPEED, 0, FACING_RIGHT);
     hasMoved = true;
