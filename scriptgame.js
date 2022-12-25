@@ -44,10 +44,19 @@ function openBox1Sown(asr) {
   if (asr == 1) {
     var inn = 'Привет, как тебя зовут?'
   }
-  if (asr == 2) {
-    var inn = 'Я - Северная, а тебя как зовут?';
+else if (asr == 2) {
+    var inn = 'Я - Северная, а какое же твоё имя, оруженосец?';
     var sty = "color: blue;"
     div.style = "color: blue !important;"
+  } else if (asr == 3) {
+    var inn = 'Меня зовут... <input type="text" id="na"> ';
+    var sty = " "
+     lol = document.getElementById('na').value;
+    localStorage.setItem('name', lol);
+  }  else if (asr == 4) {
+    let name = localStorage.getItem('name');
+    var inn = 'Здравствуй, ' + name +'. Что ты хочешь узнать?';
+    var sty = "color: blue;"
   }
   if (hell == true) {
 
