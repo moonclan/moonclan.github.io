@@ -79,6 +79,7 @@ document.addEventListener('keyup', function (event) {
     if (event.key == 'e') {
       openBox1Sown(co)
       co++
+      return co
     }
   }
 })
