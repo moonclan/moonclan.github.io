@@ -45,12 +45,12 @@ function openBox1Sown(asr) {
     var inn = 'Привет, как тебя зовут?'
   }
 if (asr == 2) {
-    var inn = 'Я - Северная, а какое же твоё имя, оруженосец?';
+    var inn = 'Я - Северная, а какое же твоё имя, оруженосец? Забыл, что ли?';
     var sty = "color: blue;"
     div.style = "color: blue !important;"
   } 
   if (asr == 3) {
-    var inn = 'Меня зовут... <input type="text" id="na"> ';
+    var inn = 'Я помню... Я... <input type="text" id="na"> ';
     var sty = " "
     div.style = sty
     document.body.appendChild(div);
@@ -62,7 +62,7 @@ if (asr == 2) {
   }  
   if (asr == 4) {
     let name = localStorage.getItem('name');
-    var inn = 'Здравствуй, ' + name +'. Что ты хочешь узнать?';
+    var inn = 'Ну вот, ' + name +'. Что же ты хочешь узнать?';
     var sty = "color: blue;"
   }
     if (asr == 5) {
