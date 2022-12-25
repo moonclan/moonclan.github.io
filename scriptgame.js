@@ -21,6 +21,7 @@ let positionY = 0;
 let img = new Image();
 var hell = true;
 var curr_lok = 1;
+var asr = 1
 if (curr_lok == 1) {
   canvas.style = 'background-image: url("https://i.ibb.co/Y2YRx8S/back.png")';
 }
