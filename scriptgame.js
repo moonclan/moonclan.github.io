@@ -116,8 +116,7 @@ if (asr == 2) {
     document.body.appendChild(div);
   }
   if (hell == false) {
-    return true
-
+    hell = true
 
   }
 
