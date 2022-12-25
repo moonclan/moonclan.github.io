@@ -119,8 +119,7 @@ if (asr == 2) {
     hell = true
 
   }
-
-} var co = 1
+ var co = 1
 document.addEventListener('keyup', function (event) {
   if (positionX > 20 && positionX < 60 && positionY > 50 && positionY < 70) {
     if (event.key == 'e') {
