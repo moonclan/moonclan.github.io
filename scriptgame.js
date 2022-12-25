@@ -52,8 +52,13 @@ if (asr == 2) {
   if (asr == 3) {
     var inn = 'Меня зовут... <input type="text" id="na"> ';
     var sty = " "
-     lol = document.getElementById('na').value;
-    localStorage.setItem('name', lol);
+    div.style = sty
+    document.body.appendChild(div);
+    div.addEventListener('keydown', function (event) {
+      if (event.key == "Enter") {
+        lol = document.getElementById('na').value;
+        localStorage.setItem('name', lol); } });
+
   }  
   if (asr == 4) {
     let name = localStorage.getItem('name');
