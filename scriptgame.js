@@ -67,26 +67,28 @@ if (asr == 2) {
   }
     if (asr == 5) {
     let name = localStorage.getItem('name');
-      function who() {
-       asr = 6
-      }
-      function where() {
-       asr = 7
-      }
+
     var inn = '<button onclick="who()">Кто ты?</button><button onclick="where()">Где мы?</button>';
       
     var sty = " "
-  } 
-   if (asr == 6) {
+  }       function who() {
+       asr = 6
+    if (asr == 6) {
     let name = localStorage.getItem('name');
     var inn = 'Неужто забыл? Я - старейшина Грозового племени, или ты и себя не помнишь?';
     var sty = "color: blue;"
     asr = 8
   }
-     if (asr == 7) {
+      }
+      function where() {
+       asr = 7   
+        if (asr == 7) {
     let name = localStorage.getItem('name');
     var inn = 'Память потерял? Мы в Песчаном овраге.';
     var sty = "color: blue;"
+      }
+
+ 
   }
        if (asr == 8) {
     let name = localStorage.getItem('name');
