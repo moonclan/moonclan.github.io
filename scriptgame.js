@@ -103,7 +103,7 @@ if (asr == 2) {
     var sty = "color: blue;"
   }
         
-         if (asr > 9) {
+         if (asr > 10) {
     let name = localStorage.getItem('name');
     var inn = 'Погодка сегодня неплохая.';
     var sty = "color: blue;"
