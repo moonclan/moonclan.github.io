@@ -45,7 +45,7 @@ function openBox1Sown(asr) {
     var inn = 'Привет, как тебя зовут?'
   }
 if (asr == 2) {
-    var inn = 'Я - Северная, а какое же твоё имя, оруженосец? Забыл, что ли?';
+    var inn = 'Я - Северная, а какое же твоё имя, оруженосец? Забыл, что ли? <span style="text-decoration: underline;"></span>';
     var sty = "color: blue;"
     div.style = "color: blue !important;"
   } 
