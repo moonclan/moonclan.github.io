@@ -41,85 +41,363 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
 }
 loadImage();
 function openBox1Sown(asr) {
-  var div = document.createElement('div');
-  if (asr == 1) {
-    var inn = 'Привет, как тебя зовут?'
+  var div = document.getElementById('text')
+  let name = localStorage.getItem('name');
+  function dia(ee) {
+    if (ee == 'one') {
+      var lc = 6;
+    }
+    if (lc == 'two') {
+      lc = 71;
+    }
+    if (lc == 6) {
+      let name = localStorage.getItem('name');
+      var inn = '*Вы призадумались на секунду*. Слушай, мне нравится твоё имя. Оно такое звонкое, и твоим голосом хорошо звучит.';
+      var sty = " "
+      div.style = sty
+      lc++
+    }
+    if (lc == 7) {
+      let name = localStorage.getItem('name');
+      var inn = '*Старая кошка усмехается*. Правда? Как же звонко это звучит - HerName.';
+      var sty = "color: blue;"
+      div.style = sty
+      lc++
+    }
+    if (co == 8) {
+      let name = localStorage.getItem('name');
+      var inn = '*Вы покраснели, но ваша шерсть скрыла смущение*. Ой...';
+      var sty = " "
+      div.style = sty
+      lc++
+    }
+    if (lc == 71) {
+      let name = localStorage.getItem('name');
+      var inn = '*Вы сильно задумались*. Кхем, слушай, а ты ... не видела мышей случайно...под тем платаном? А то меня... они... в общем... в палатку ... целителей нужна... мышиная желчь..!';
+      var sty = " "
+      div.style = sty
+      lc == 72;
+    }
   }
-if (asr == 2) {
-    var inn = 'Я - Северная, а какое же твоё имя, оруженосец? Забыл, что ли? <span style="text-decoration: underline;"></span>';
-    var sty = "color: blue;"
+  if (asr == 1) {
+    div.innerHTML = "Привет.";
+  }
+  if (asr == 2) {
+    div.innerHTML = 'Привет, <input type="text" id="na" placeholder="Придумайте имя своего персонажа.">';
     div.style = "color: blue !important;"
-  } 
+  }
   if (asr == 3) {
-    var inn = 'Я помню... Я... <input type="text" id="na"> ';
+
+    div.innerHTML = '<select id="sel1"><option value="one">Хмм... *сочинить предлог, чтобы выведать её имя*</option><option value="two">Хм...*сочинить предлог, чтобы выведать местоположение*</option></select>   <input type="text" id="au"placeholder="Здесь 1 или 2">';
+    var e = document.getElementById('sel1').value;
     var sty = " "
     div.style = sty
-    document.body.appendChild(div);
-    div.addEventListener('keydown', function (event) {
-      if (event.key == "Enter") {
-        lol = document.getElementById('na').value;
-        localStorage.setItem('name', lol); } });
-
-  }  
-   function who() {
-    let name = localStorage.getItem('name');
-    var inn = 'Неужто забыл? Я - старейшина Грозового племени, или ты и себя не помнишь?';
-    var sty = "color: blue;"
-    asr = 8;
-      }
-      function where() {
-    let name = localStorage.getItem('name');
-    var inn = 'Память потерял? Мы в Песчаном овраге.';
-    var sty = "color: blue;"
-    asr = 8;
+    if (e == 'one') {
+      co = 6;
     }
-  if (asr == 4) {
-    let name = localStorage.getItem('name');
-    var inn = 'Ну вот, ' + name +'. Что же ты хочешь узнать?';
-    var sty = "color: blue;"
-  }
-    if (asr == 5) {
-    let name = localStorage.getItem('name');
+    if (e == 'two') {
+      co = 71;
+    }
+    var hsd = true;
+    if (hsd == true) {
+      document.getElementById('au').addEventListener("keyup", function (event) {
 
-    var inn = '<button onclick="who()">Кто ты?</button><button onclick="where()">Где мы?</button>';
-      
-    var sty = " "
-  }      
+        if (event.key == 1) {
+          lc = 6;
+          if (lc == 6) {
+            let name = localStorage.getItem('name');
+            div.innerHTML = '*Вы призадумались на секунду*. Слушай, мне нравится твоё имя. Оно такое звонкое, и твоим голосом хорошо звучит.';
+            var sty = " "
+            document.getElementById('as').addEventListener("keyup", function (event) {
+              if (event.key == 'e') {
+                lc = 7;
+                if (lc == 7) {
+                  let name = localStorage.getItem('name');
+                  div.innerHTML = '*Старая кошка усмехается*. Правда? Как же звонко и мелодично это звучит - Кривоухая.';
+                  var sty = "color: blue;"
+                  div.style = sty
+                  document.getElementById('as').addEventListener("keyup", function (event) {
+                    if (event.key == 'e') {
 
- 
+                      let name = localStorage.getItem('name');
+                      div.innerHTML = '*Вы покраснели, но ваша шерсть скрыла смущение*. Ой...';
+                      var sty = " "
+                      div.style = sty
+                      lc++
+
+                    } document.getElementById('as').addEventListener("keyup", function (event) {
+                      if (event.key == 'e') {
+                        let name = localStorage.getItem('name');
+                        div.innerHTML = '*Кошка посмеялась ещё чуть-чуть*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
+                        var sty = "color: blue;"
+                        div.style = sty
+                        lc++
+                        asr=2
+                        document.getElementById('as').addEventListener("keyup", function (event) {
+                          if(event.key == 'e') {
+                          if (asr == 3) {
+
+                          div.innerHTML = '<select id="sel1"><option value="one">Хмм... *сочинить предлог, чтобы выведать её имя*</option><option value="two">Хм...*сочинить предлог, чтобы выведать местоположение*</option></select>   <input type="text" id="au"placeholder="Здесь 1 или 2">';
+                          var e = document.getElementById('sel1').value;
+                          var sty = " "
+                          div.style = sty
+                          if (e == 'one') {
+                            co = 6;
+                          }
+                          if (e == 'two') {
+                            co = 71;
+                          }
+                          var hsd = true;
+                          if (hsd == true) {
+                            document.getElementById('au').addEventListener("keyup", function (event) {
+
+                              if (event.key == 1) {
+                                lc = 6;
+                                if (lc == 6) {
+                                  let name = localStorage.getItem('name');
+                                  div.innerHTML = '*Вы призадумались на секунду*. Слушай, мне нравится твоё имя. Оно такое звонкое, и твоим голосом хорошо звучит.';
+                                  var sty = " "
+                                  document.getElementById('as').addEventListener("keyup", function (event) {
+                                    if (event.key == 'e') {
+                                      lc = 7;
+                                      if (lc == 7) {
+                                        let name = localStorage.getItem('name');
+                                        div.innerHTML = '*Старая кошка усмехается*. Правда? Как же звонко и мелодично это звучит - Кривоухая.';
+                                        var sty = "color: blue;"
+                                        div.style = sty
+                                        document.getElementById('as').addEventListener("keyup", function (event) {
+                                          if (event.key == 'e') {
+
+                                            let name = localStorage.getItem('name');
+                                            div.innerHTML = '*Вы покраснели, но ваша шерсть скрыла смущение*. Ой...';
+                                            var sty = " "
+                                            div.style = sty
+                                            lc++
+
+                                          } document.getElementById('as').addEventListener("keyup", function (event) {
+                                            if (event.key == 'e') {
+                                              let name = localStorage.getItem('name');
+                                              div.innerHTML = '*Кошка посмеялась ещё чуть-чуть*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
+                                              var sty = "color: blue;"
+                                              div.style = sty
+                                              lc++
+                                              asr = 2
+                                            }
+                                          })
+                                        })
+                                      }
+                                    }
+                                  })
+
+                                }
+                              }
+
+                              else if (event.key == 2) {
+                                lc = 71
+                                if (lc == 71) {
+                                  let name = localStorage.getItem('name');
+                                  div.innerHTML = '*Вы сильно задумались*. Кхем, слушай, а ты ... не видела мышей случайно...под тем платаном? А то меня... они... в общем... в палатку ... целителей нужна... мышиная желчь..!';
+                                  var sty = " "
+                                  div.style = sty
+                                  lc == 72;
+                                  document.getElementById('as').addEventListener("keyup", function (event) {
+                                    if (event.key == 'e') {
+
+                                      let name = localStorage.getItem('name');
+                                      div.innerHTML = '*Кошка недоуменно посмотрела вам в глаза. Вы почувствовали неловкость.* Под Совиным деревом редко кто водится, даже в Сезон Зелёных Листьев, а сейчас Сезон Голых Деревьев.';
+                                      var sty = "color: blue; "
+                                      div.style = sty
+                                      lc++
+
+                                    } document.getElementById('as').addEventListener("keyup", function (event) {
+                                      if (event.key == 'e') {
+                                        let name = localStorage.getItem('name');
+                                        div.innerHTML = '*Старейшина посмеялась*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
+                                        var sty = "color: blue;"
+                                        div.style = sty
+                                        lc++
+
+                                        document.getElementById('as').addEventListener("keyup", function (event) {
+
+
+                                        })
+                                      }
+                                    })
+                                  })
+                                }
+
+                              }
+                            }
+                            )
+                            hsd = false
+                          }
+                        }}})
+                      }
+                    })
+                  })
+                }
+              }
+            })
+
+          }
+        }
+
+        else if (event.key == 2) {
+          lc = 71
+          if (lc == 71) {
+            let name = localStorage.getItem('name');
+            div.innerHTML = '*Вы сильно задумались*. Кхем, слушай, а ты ... не видела мышей случайно...под тем платаном? А то меня... они... в общем... в палатку ... целителей нужна... мышиная желчь..!';
+            var sty = " "
+            div.style = sty
+            lc == 72;
+            document.getElementById('as').addEventListener("keyup", function (event) {
+              if (event.key == 'e') {
+
+                let name = localStorage.getItem('name');
+                div.innerHTML = '*Кошка недоуменно посмотрела вам в глаза. Вы почувствовали неловкость.* Под Совиным деревом редко кто водится, даже в Сезон Зелёных Листьев, а сейчас Сезон Голых Деревьев.';
+                var sty = "color: blue; "
+                div.style = sty
+                lc++
+
+              } document.getElementById('as').addEventListener("keyup", function (event) {
+                if (event.key == 'e') {
+                  let name = localStorage.getItem('name');
+                  div.innerHTML = '*Старейшина посмеялась*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
+                  var sty = "color: blue;"
+                  div.style = sty
+                  lc++
+
+                  document.getElementById('as').addEventListener("keyup", function (event) {
+                    if (asr == 3) {
+
+                      div.innerHTML = '<select id="sel1"><option value="one">Хмм... *сочинить предлог, чтобы выведать её имя*</option><option value="two">Хм...*сочинить предлог, чтобы выведать местоположение*</option></select>   <input type="text" id="au"placeholder="Здесь 1 или 2">';
+                      var e = document.getElementById('sel1').value;
+                      var sty = " "
+                      div.style = sty
+                      if (e == 'one') {
+                        co = 6;
+                      }
+                      if (e == 'two') {
+                        co = 71;
+                      }
+                      var hsd = true;
+                      if (hsd == true) {
+                        document.getElementById('au').addEventListener("keyup", function (event) {
+
+                          if (event.key == 1) {
+                            lc = 6;
+                            if (lc == 6) {
+                              let name = localStorage.getItem('name');
+                              div.innerHTML = '*Вы призадумались на секунду*. Слушай, мне нравится твоё имя. Оно такое звонкое, и твоим голосом хорошо звучит.';
+                              var sty = " "
+                              document.getElementById('as').addEventListener("keyup", function (event) {
+                                if (event.key == 'e') {
+                                  lc = 7;
+                                  if (lc == 7) {
+                                    let name = localStorage.getItem('name');
+                                    div.innerHTML = '*Старая кошка усмехается*. Правда? Как же звонко и мелодично это звучит - Кривоухая.';
+                                    var sty = "color: blue;"
+                                    div.style = sty
+                                    document.getElementById('as').addEventListener("keyup", function (event) {
+                                      if (event.key == 'e') {
+
+                                        let name = localStorage.getItem('name');
+                                        div.innerHTML = '*Вы покраснели, но ваша шерсть скрыла смущение*. Ой...';
+                                        var sty = " "
+                                        div.style = sty
+                                        lc++
+
+                                      } document.getElementById('as').addEventListener("keyup", function (event) {
+                                        if (event.key == 'e') {
+                                          let name = localStorage.getItem('name');
+                                          div.innerHTML = '*Кошка посмеялась ещё чуть-чуть*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
+                                          var sty = "color: blue;"
+                                          div.style = sty
+                                          lc++
+                                          asr = 2
+                                        }
+                                      })
+                                    })
+                                  }
+                                }
+                              })
+
+                            }
+                          }
+
+                          else if (event.key == 2) {
+                            lc = 71
+                            if (lc == 71) {
+                              let name = localStorage.getItem('name');
+                              div.innerHTML = '*Вы сильно задумались*. Кхем, слушай, а ты ... не видела мышей случайно...под тем платаном? А то меня... они... в общем... в палатку ... целителей нужна... мышиная желчь..!';
+                              var sty = " "
+                              div.style = sty
+                              lc == 72;
+                              document.getElementById('as').addEventListener("keyup", function (event) {
+                                if (event.key == 'e') {
+
+                                  let name = localStorage.getItem('name');
+                                  div.innerHTML = '*Кошка недоуменно посмотрела вам в глаза. Вы почувствовали неловкость.* Под Совиным деревом редко кто водится, даже в Сезон Зелёных Листьев, а сейчас Сезон Голых Деревьев.';
+                                  var sty = "color: blue; "
+                                  div.style = sty
+                                  lc++
+
+                                } document.getElementById('as').addEventListener("keyup", function (event) {
+                                  if (event.key == 'e') {
+                                    let name = localStorage.getItem('name');
+                                    div.innerHTML = '*Старейшина посмеялась*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
+                                    var sty = "color: blue;"
+                                    div.style = sty
+                                    lc++
+
+            
+                                  }
+                                })
+                              })
+                            }
+
+                          }
+                        }
+                        )
+                        hsd = false
+                      }
+                    }
+                
+                  })
+                }
+              })
+            })
+          }
+
+        }
+      }
+      )
+      hsd = false
+    }
   }
-       if (asr == 8) {
+
+  if (asr == 9) {
     let name = localStorage.getItem('name');
     var inn = 'О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
     var sty = "color: blue;"
   }
-       if (asr == 9) {
+  if (asr == 10) {
     let name = localStorage.getItem('name');
     var inn = 'Хорошо. Тебе что-нибудь нужно?';
     var sty = " "
   }
-       if (asr == 10) {
+  if (asr == 11) {
     let name = localStorage.getItem('name');
     var inn = 'Спасибо, но я полежу здесь. Небо красивое. А ты беги за Острозвёздом, ' + name;
     var sty = "color: blue;"
   }
-        
-         if (asr > 10) {
+
+  if (asr > 11) {
     let name = localStorage.getItem('name');
     var inn = 'Погодка сегодня неплохая.';
     var sty = "color: blue;"
   }
-  if (hell == true) {
-
-    div.innerHTML = inn
-    div.style = "display: block";
-    div.style = sty
-    document.body.appendChild(div);
-  }
-  if (hell == false) {
-    hell = true
-
-  }
+}
  var co = 1
 document.addEventListener('keyup', function (event) {
   if (positionX > 20 && positionX < 60 && positionY > 50 && positionY < 70) {
