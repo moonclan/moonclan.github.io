@@ -170,7 +170,7 @@ function openBox1Sown(asr) {
                                       lc = 7;
                                       if (lc == 7) {
                                         let name = localStorage.getItem('name');
-                                        div.innerHTML = '*Старая кошка усмехается*. Правда? Как же звонко и мелодично это звучит - Кривоухая.';
+                                        div.innerHTML = '*Старая кошка усмехается*. Правда? Как же звонко и мелодично это звучит - Выхухоль.';
                                         var sty = "color: blue;"
                                         div.style = sty
                                         document.getElementById('as').addEventListener("keyup", function (event) {
