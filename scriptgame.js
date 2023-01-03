@@ -1,7 +1,7 @@
 const SCALE = 2;
 const WIDTH = 75;
 const HEIGHT = 80;
-const SCALED_WIDTH = 35;
+const SCALED_WIDTH = 45;
 const SCALED_HEIGHT = 35;
 const CYCLE_LOOP = [0, 1, 0, 2];
 const FACING_DOWN = 0;
