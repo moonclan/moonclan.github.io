@@ -414,7 +414,7 @@ document.addEventListener('keyup', function (event) {
     console.log('loc')
     if (event.key == 'q') {
       curr_lok = 2;
-      canvas.style = 'background-image: url("https://sun4-16.userapi.com/impg/5g99O0fCEdYfA-zIrt1Lz9sAac2py9vcmz891Q/Gr3lK2h0cZY.jpg?size=676x592&quality=96&sign=c9478eaeda69a19aa4e1a8a292a6ad83&type=album")';
+      canvas.style = 'background-image: url("https://i.ibb.co/kKQCYbv/back2.png")';
     }
   }
 })
