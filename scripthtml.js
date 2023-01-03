@@ -2,6 +2,7 @@
 function rasr() {
 var pp = document.getElementById('dp')
 localStorage.setItem('conta', 'display: none;')
-pp.style=localStorage.getItem('conta')
+
 
 }
+pp.style=localStorage.getItem('conta')
