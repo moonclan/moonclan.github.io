@@ -39,13 +39,6 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
     frameX * WIDTH, frameY * HEIGHT, WIDTH, HEIGHT,
     canvasX, canvasY, SCALED_WIDTH, SCALED_HEIGHT);
 }
-function rasr() {
-var pp = document.getElementById('dp')
-localStorage.setItem('cont', 'display:none;')
-pp.style=localStorage.getItem('cont')
-
-}
-
 
 loadImage();
 function openBox1Sown(asr) {
