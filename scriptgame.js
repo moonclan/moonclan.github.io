@@ -426,7 +426,7 @@ function gameLoop() {
   if (curr_lok == 1) {
     base_image = new Image();
     base_image.src = 'https://i.ibb.co/L0VCXbX/missSown.png';
-    ctx.drawImage(base_image, 50, 70, 35, 35);
+    ctx.drawImage(base_image, 50, 70, 45, 35);
     if (positionX > 24 && positionX < 70 && positionY > 53 && positionY < 87) {
       positionX = positionX - 1;
       positionY = positionY - 1;
