@@ -41,7 +41,7 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
 }
 function rasr() {
 var pp = document.getElementById('dp')
-localStorage.setItem('cont', 'display:none;')
+localStorage.setItem('cont', 'none')
 pp.display=localStorage.getItem('cont')
 
 }
