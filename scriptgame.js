@@ -20,14 +20,14 @@ let positionX = 0;
 let positionY = 0;
 let img = new Image();
 var hell = true;
-var curr_lok = 1;
+var curr_lok = 2;
 var asr = 1
 if (curr_lok == 1) {
   canvas.style = 'background-image: url("https://i.ibb.co/Y2YRx8S/back.png")';
 }
 else if (curr_lok == 2) {
-  canvas.style = 'background-image: url("https://i.ibb.co/kKQCYbv/back2.png")';
-} 
+  canvas.style = 'background-image: url("https://i.ibb.co/VYLCvXj/back2.png")';
+}
 function loadImage() {
   img.src = 'https://i.ibb.co/qxMczB0/spritesheet.png';
   img.onload = function () {
@@ -39,7 +39,6 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
     frameX * WIDTH, frameY * HEIGHT, WIDTH, HEIGHT,
     canvasX, canvasY, SCALED_WIDTH, SCALED_HEIGHT);
 }
-
 loadImage();
 function openBox1Sown(asr) {
   var div = document.getElementById('text')
@@ -133,106 +132,7 @@ function openBox1Sown(asr) {
                         var sty = "color: blue;"
                         div.style = sty
                         lc++
-                        asr=2
-                        document.getElementById('as').addEventListener("keyup", function (event) {
-                          if(event.key == 'e') {
-                          if (asr == 3) {
 
-                          div.innerHTML = '<select id="sel1"><option value="one">Хмм... *сочинить предлог, чтобы выведать её имя*</option><option value="two">Хм...*сочинить предлог, чтобы выведать местоположение*</option></select>   <input type="text" id="au"placeholder="Здесь 1 или 2">';
-                          var e = document.getElementById('sel1').value;
-                          var sty = " "
-                          div.style = sty
-                          if (e == 'one') {
-                            co = 6;
-                          }
-                          if (e == 'two') {
-                            co = 71;
-                          }
-                          var hsd = true;
-                          if (hsd == true) {
-                            document.getElementById('au').addEventListener("keyup", function (event) {
-
-                              if (event.key == 1) {
-                                lc = 6;
-                                if (lc == 6) {
-                                  let name = localStorage.getItem('name');
-                                  div.innerHTML = '*Вы призадумались на секунду*. Слушай, мне нравится твоё имя. Оно такое звонкое, и твоим голосом хорошо звучит.';
-                                  var sty = " "
-                                  document.getElementById('as').addEventListener("keyup", function (event) {
-                                    if (event.key == 'e') {
-                                      lc = 7;
-                                      if (lc == 7) {
-                                        let name = localStorage.getItem('name');
-                                        div.innerHTML = '*Старая кошка усмехается*. Правда? Как же звонко и мелодично это звучит - Выхухоль.';
-                                        var sty = "color: blue;"
-                                        div.style = sty
-                                        document.getElementById('as').addEventListener("keyup", function (event) {
-                                          if (event.key == 'e') {
-
-                                            let name = localStorage.getItem('name');
-                                            div.innerHTML = '*Вы покраснели, но ваша шерсть скрыла смущение*. Ой...';
-                                            var sty = " "
-                                            div.style = sty
-                                            lc++
-
-                                          } document.getElementById('as').addEventListener("keyup", function (event) {
-                                            if (event.key == 'e') {
-                                              let name = localStorage.getItem('name');
-                                              div.innerHTML = '*Кошка посмеялась ещё чуть-чуть*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
-                                              var sty = "color: blue;"
-                                              div.style = sty
-                                              lc++
-                                              asr = 2
-                                            }
-                                          })
-                                        })
-                                      }
-                                    }
-                                  })
-
-                                }
-                              }
-
-                              else if (event.key == 2) {
-                                lc = 71
-                                if (lc == 71) {
-                                  let name = localStorage.getItem('name');
-                                  div.innerHTML = '*Вы сильно задумались*. Кхем, слушай, а ты ... не видела мышей случайно...под тем платаном? А то меня... они... в общем... в палатку ... целителей нужна... мышиная желчь..!';
-                                  var sty = " "
-                                  div.style = sty
-                                  lc == 72;
-                                  document.getElementById('as').addEventListener("keyup", function (event) {
-                                    if (event.key == 'e') {
-
-                                      let name = localStorage.getItem('name');
-                                      div.innerHTML = '*Кошка недоуменно посмотрела вам в глаза. Вы почувствовали неловкость.* Под Совиным деревом редко кто водится, даже в Сезон Зелёных Листьев, а сейчас Сезон Голых Деревьев.';
-                                      var sty = "color: blue; "
-                                      div.style = sty
-                                      lc++
-
-                                    } document.getElementById('as').addEventListener("keyup", function (event) {
-                                      if (event.key == 'e') {
-                                        let name = localStorage.getItem('name');
-                                        div.innerHTML = '*Старейшина посмеялась*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
-                                        var sty = "color: blue;"
-                                        div.style = sty
-                                        lc++
-
-                                        document.getElementById('as').addEventListener("keyup", function (event) {
-
-
-                                        })
-                                      }
-                                    })
-                                  })
-                                }
-
-                              }
-                            }
-                            )
-                            hsd = false
-                          }
-                        }}})
                       }
                     })
                   })
@@ -247,7 +147,7 @@ function openBox1Sown(asr) {
           lc = 71
           if (lc == 71) {
             let name = localStorage.getItem('name');
-            div.innerHTML = '*Вы сильно задумались*. Кхем, слушай, а ты ... не видела мышей случайно...под тем платаном? А то меня... они... в общем... в палатку ... целителей нужна... мышиная желчь..!';
+          div.innerHTML = '*Вы сильно задумались*. Кхем, слушай, а ты ... не видела мышей случайно...под тем платаном? А то меня... они... в общем... в палатку ... целителей нужна... мышиная желчь..!';
             var sty = " "
             div.style = sty
             lc == 72;
@@ -268,103 +168,6 @@ function openBox1Sown(asr) {
                   div.style = sty
                   lc++
 
-                  document.getElementById('as').addEventListener("keyup", function (event) {
-                    if (asr == 3) {
-
-                      div.innerHTML = '<select id="sel1"><option value="one">Хмм... *сочинить предлог, чтобы выведать её имя*</option><option value="two">Хм...*сочинить предлог, чтобы выведать местоположение*</option></select>   <input type="text" id="au"placeholder="Здесь 1 или 2">';
-                      var e = document.getElementById('sel1').value;
-                      var sty = " "
-                      div.style = sty
-                      if (e == 'one') {
-                        co = 6;
-                      }
-                      if (e == 'two') {
-                        co = 71;
-                      }
-                      var hsd = true;
-                      if (hsd == true) {
-                        document.getElementById('au').addEventListener("keyup", function (event) {
-
-                          if (event.key == 1) {
-                            lc = 6;
-                            if (lc == 6) {
-                              let name = localStorage.getItem('name');
-                              div.innerHTML = '*Вы призадумались на секунду*. Слушай, мне нравится твоё имя. Оно такое звонкое, и твоим голосом хорошо звучит.';
-                              var sty = " "
-                              document.getElementById('as').addEventListener("keyup", function (event) {
-                                if (event.key == 'e') {
-                                  lc = 7;
-                                  if (lc == 7) {
-                                    let name = localStorage.getItem('name');
-                                    div.innerHTML = '*Старая кошка усмехается*. Правда? Как же звонко и мелодично это звучит - Кривоухая.';
-                                    var sty = "color: blue;"
-                                    div.style = sty
-                                    document.getElementById('as').addEventListener("keyup", function (event) {
-                                      if (event.key == 'e') {
-
-                                        let name = localStorage.getItem('name');
-                                        div.innerHTML = '*Вы покраснели, но ваша шерсть скрыла смущение*. Ой...';
-                                        var sty = " "
-                                        div.style = sty
-                                        lc++
-
-                                      } document.getElementById('as').addEventListener("keyup", function (event) {
-                                        if (event.key == 'e') {
-                                          let name = localStorage.getItem('name');
-                                          div.innerHTML = '*Кошка посмеялась ещё чуть-чуть*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
-                                          var sty = "color: blue;"
-                                          div.style = sty
-                                          lc++
-                                          asr = 2
-                                        }
-                                      })
-                                    })
-                                  }
-                                }
-                              })
-
-                            }
-                          }
-
-                          else if (event.key == 2) {
-                            lc = 71
-                            if (lc == 71) {
-                              let name = localStorage.getItem('name');
-                              div.innerHTML = '*Вы сильно задумались*. Кхем, слушай, а ты ... не видела мышей случайно...под тем платаном? А то меня... они... в общем... в палатку ... целителей нужна... мышиная желчь..!';
-                              var sty = " "
-                              div.style = sty
-                              lc == 72;
-                              document.getElementById('as').addEventListener("keyup", function (event) {
-                                if (event.key == 'e') {
-
-                                  let name = localStorage.getItem('name');
-                                  div.innerHTML = '*Кошка недоуменно посмотрела вам в глаза. Вы почувствовали неловкость.* Под Совиным деревом редко кто водится, даже в Сезон Зелёных Листьев, а сейчас Сезон Голых Деревьев.';
-                                  var sty = "color: blue; "
-                                  div.style = sty
-                                  lc++
-
-                                } document.getElementById('as').addEventListener("keyup", function (event) {
-                                  if (event.key == 'e') {
-                                    let name = localStorage.getItem('name');
-                                    div.innerHTML = '*Старейшина посмеялась*. О тебе спрашивал Острозвёзд. Иди, найди своего отца.';
-                                    var sty = "color: blue;"
-                                    div.style = sty
-                                    lc++
-
-            
-                                  }
-                                })
-                              })
-                            }
-
-                          }
-                        }
-                        )
-                        hsd = false
-                      }
-                    }
-                
-                  })
                 }
               })
             })
@@ -399,7 +202,7 @@ function openBox1Sown(asr) {
     var sty = "color: blue;"
   }
 }
- var co = 1
+var co = 1
 document.addEventListener('keyup', function (event) {
   if (positionX > 20 && positionX < 60 && positionY > 50 && positionY < 70) {
     if (event.key == 'e') {
@@ -414,8 +217,14 @@ document.addEventListener('keyup', function (event) {
   if (positionX > 110 && positionX < 170 && positionY > 1 && positionY < 70) {
     console.log('loc')
     if (event.key == 'q') {
+      if(curr_lok == 1) {
       curr_lok = 2;
-      canvas.style = 'background-image: url("https://i.ibb.co/kKQCYbv/back2.png")';
+      canvas.style = 'background-image: url("https://i.ibb.co/VYLCvXj/back2.png")';
+      }
+      else if(curr_lok ==2) {
+        curr_lok = 1;
+        canvas.style = 'background-image: url("https://i.ibb.co/Y2YRx8S/back.png")';
+      }
     }
   }
 })
@@ -424,7 +233,8 @@ document.addEventListener('keyup', function (event) {
 
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  if (curr_lok == 1) {
+
+   if (curr_lok == 1) {
     base_image = new Image();
     base_image.src = 'https://i.ibb.co/L0VCXbX/missSown.png';
     ctx.drawImage(base_image, 50, 70, 45, 35);
@@ -434,6 +244,17 @@ function gameLoop() {
       console.log(positionY)
     }
 
+  } else if (curr_lok == 2) {
+    base_image = new Image();
+    base_image.src = 'https://i.ibb.co/dKFCP66/poppy.png';
+    ctx.drawImage(base_image, 100, 70, 45, 35);
+    if (positionX > 77 && positionX < 123 && positionY > 47 && positionY < 98) {
+
+        positionY = positionY - 1;
+        positionX = positionX - 1;
+        console.log(positionY)
+    
+    }
   }
   window.addEventListener('keydown', keyDownListener);
   function keyDownListener(event) {
@@ -442,7 +263,7 @@ function gameLoop() {
   window.addEventListener('keyup', keyUpListener);
   function keyUpListener(event) {
     keyPresses[event.key] = false;
-  }
+  } 
   let hasMoved = false;
   if (keyPresses.w) {
     moveCharacter(0, -MOVEMENT_SPEED, FACING_UP);
@@ -454,7 +275,7 @@ function gameLoop() {
   if (keyPresses.a) {
     moveCharacter(-MOVEMENT_SPEED, 0, FACING_LEFT);
     hasMoved = true;
-        console.log('sdsa')
+    console.log('sdsa')
   } else if (keyPresses.d) {
     moveCharacter(MOVEMENT_SPEED, 0, FACING_RIGHT);
     hasMoved = true;
