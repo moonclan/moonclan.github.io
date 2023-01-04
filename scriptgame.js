@@ -41,7 +41,7 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
 }
 loadImage();
 function openBox1Sown(asr) {
-  var div = document.getElementById('text')
+   if(curr_lok == 1) { var div = document.getElementById('text')
   let name = localStorage.getItem('name');
   function dia(ee) {
     if (ee == 'one') {
@@ -201,6 +201,7 @@ function openBox1Sown(asr) {
     var inn = 'Погодка сегодня неплохая.';
     var sty = "color: blue;"
   }
+}
 }
 var co = 1
 document.addEventListener('keyup', function (event) {
