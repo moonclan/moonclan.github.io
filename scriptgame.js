@@ -314,3 +314,14 @@ let titleElem = menuElem.querySelector('.title');
 titleElem.onclick = function () {
   menuElem.classList.toggle('open');
 }; 
+
+
+function sniff() {
+var sn = document.getElementById('sniff');
+if(curr_lok == 2) {
+sn.innerHTML = 'Пахнет морозом. Брр. Ещё здесь есть немного котов и слабый запах дичи из кучи. Обычный лагерь.';
+} else if(curr_lok == 1) {
+sn.innerHTML = 'Пахнет холодом. Мне сложно что-то учуять. Дичью не пахнет. Чую лагерь... <span style="color: white;">где-то севернее.</span>';
+}
+}
+
