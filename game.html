@@ -3,6 +3,7 @@
 <head>
 <title>Главная страница / Kosmogame</title>
 <meta charset="utf-8">
+	<script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
   <style>
 	  body {
       background-color: #222222;
@@ -79,14 +80,21 @@
 	<script src="scripthtml.js"></script>
 </head>
 
-<body >
+<body > <script
+  type="text/javascript"
+  src="https://vk.com/js/api/openapi.js?168"
+  charset="windows-1251"
+></script>
+<script type="text/javascript">
+  VK.init({ apiId: 8045725, onlyWidgets: true });
+</script>
   <table><tr><td><div class="diff" id="cli" onclick="click()"><div id="sweeties" class="menu">
 <span class="title">Обучение</span>
 <ul>
 	<li>Ходить - wasd(необходима английская раскладка)</li>
 	<li>Говорить/взаимодействовать - английская e</li>
 	<li>Перемещаться по локациям - q в определённом месте</li>
-	<li>Текстовое поле с надписью "выбор ответа" - туда нужно вставлять английскую e в диалоге.</li>
+	<li>Текстовое поле с надписью "выбор ответа" - туда нужно вставлять английскую e в диалоге(возможно будет исправлено позже).</li>
 	<li>Как проходить игру - разбирайтесь сами пж</li>
 </ul></div></td><td>
 
@@ -102,5 +110,9 @@ Your browser does not support the audio element.
 <canvas id="canvas" style="">Твой браузер не поддерживает canvas. Но зато теперь ты знаешь, что совы держат у себя в дуплах слепых змей.</canvas>
 	  	<div id="game">	<div id="text"></div><input type="text" placeholder="Выбор ответа" id="as"></div>
 <script src="scriptgame.js"></script>
+<div id="vk_like" style="text-align: center;"></div>
+<script type="text/javascript">
+  VK.Widgets.Like("vk_like", {type: "full", height: 22});
+</script>
 </body>
 </html>
