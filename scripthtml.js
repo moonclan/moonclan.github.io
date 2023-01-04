@@ -1,6 +1,7 @@
 //скрипты для кнопок и т.п.
-function rasr() {
 var pp = document.getElementById('dp')
+function rasr() {
+
 localStorage.setItem('conta', 'display: none;')
 
 
