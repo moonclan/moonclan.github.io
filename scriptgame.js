@@ -215,20 +215,26 @@ document.addEventListener('keyup', function (event) {
   }
 })
 document.addEventListener('keyup', function (event) {
-  if (positionX > 110 && positionX < 170 && positionY > 1 && positionY < 70) {
+  if (positionX > 100 && positionX < 150 && positionY > 0 && positionY < 10) {
     console.log('loc')
     if (event.key == 'q') {
       if(curr_lok == 1) {
       curr_lok = 2;
       canvas.style = 'background-image: url("https://i.ibb.co/VYLCvXj/back2.png")';
       }
-      else if(curr_lok ==2) {
-        curr_lok = 1;
-        canvas.style = 'background-image: url("https://i.ibb.co/Y2YRx8S/back.png")';
-      }
+
     }
   }
-})
+  else if (positionX > 98 && positionX < 160 && positionY > 110 && positionY < 119) { 
+    if (curr_lok == 2) {
+      if (event.key == 'q') {
+      curr_lok = 1;
+      canvas.style = 'background-image: url("https://i.ibb.co/Y2YRx8S/back.png")';
+    }
+    }
+  }
+  }
+)
 
 
 
@@ -276,11 +282,9 @@ function gameLoop() {
   if (keyPresses.a) {
     moveCharacter(-MOVEMENT_SPEED, 0, FACING_LEFT);
     hasMoved = true;
-    console.log('sdsa')
   } else if (keyPresses.d) {
     moveCharacter(MOVEMENT_SPEED, 0, FACING_RIGHT);
     hasMoved = true;
-    console.log('sdsa')
 
   }
   if (hasMoved) {
@@ -323,5 +327,10 @@ sn.innerHTML = 'Пахнет морозом. Брр. Ещё здесь есть 
 } else if(curr_lok == 1) {
 sn.innerHTML = 'Пахнет холодом. Мне сложно что-то учуять. Дичью не пахнет. Чую лагерь... <span style="color: white;">где-то севернее.</span>';
 }
+}
+canvas.onmousemove = function () {
+  var x = positionX;
+  var y = positionY;
+  document.getElementById('devel').innerHTML = 'x: ' + x + ' y: ' + y;
 }
 
