@@ -236,7 +236,17 @@ document.addEventListener('keyup', function (event) {
   }
 )
 
+window.addEventListener('keydown', function(event) {
+    if (event.key == 'Shift') {
+         MOVEMENT_SPEED = 2 
+ 
+    }
+  }); 
+window.addEventListener('keyup', function (event) { 
+    if (event.keyCode = 'Shift') {
+      MOVEMENT_SPEED = 1
 
+    }  }) 
 
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
