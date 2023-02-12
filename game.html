@@ -1,131 +1,107 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Главная страница / Kosmogame</title>
-<meta charset="utf-8">
-<script
-  type="text/javascript"
-  src="https://vk.com/js/api/openapi.js?168"
-  charset="windows-1251"
-></script>
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
-  <style>
-	  body {
-      background-color: #222222;
-      padding: auto;
-	position: relative;
-		    color: #c0bec5;
-		}
+	<title>ИГрОВаЯ|ПёсМир</title>
+	<script src="scriptgame.js"></script>
+	<style>body {
+  background-color: #1b1e27;
 
-		body,
-		html {
-			width: 100%;
-			height: 100%;
-		}
+}
+#game td {
+  width: 100px;
+  height: 150px;
+}
+#chat td {
+  background-color: rgb(80, 49, 32);
+  width: 100%;
 
-		canvas {
-      max-width: 512px;
-      min-height: 400px;
-			padding: 0;
-			margin: 0;
-      border: 0.5px solid black;
-					padding: 0;
-			margin: auto;
-      padding-left: 0;
-		padding-right: 0;
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%) translateX(70%);
+}
+#main {
+  display: block;
+}
+#game {
+  width: 500px;
+  height: 500px;
+  background-image: url('https://i.ibb.co/B4MWcGP/image.png');
+}
+#mess {
 
-		}		.menu ul {
-		margin: 0;
-		list-style: none;
-		padding-left: 20px;
-		display: none;
-		}
-		
-		.menu .title {
-		font-size: 18px;
-		cursor: pointer;
-		}
-		
-		.menu .title::before {
-		content: '> ';
-		font-size: 80%;
-		color: green;
-		}
-		
-		.menu.open .title::before {
-		content: '˅ ';
-		}
-		
-		.menu.open ul {
-		display: block;
-		}
-	  		#game {
-			position: sticky;
-		}
-		#text {
-			position: absolute;
-			background-color: black;
-			width: 500px;
-			height: 100px;
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-		position: absolute;
-		top: 70%;
-		transform: translateY(600%) translateX(70%);
-			border: 3px solid white;
-		}
-	</style>
-	<script src="scripthtml.js"></script>	<script src="doing.js"></script>
+width: 500px;
+height: 150px;
+overflow-y: scroll;
+}  </style>
 </head>
 
-<body >
-<script type="text/javascript">
-  VK.init({ apiId: 51518599, onlyWidgets: true });
-</script>
-  <table><tr><td><div class="diff" id="cli" onclick="click()"><div id="sweeties" class="menu">
-<span class="title">Обучение</span>
-<ul>
-	<li>Ходить - wasd(необходима английская раскладка)</li>
-	<li>Говорить/взаимодействовать - английская e</li>
-	<li>Перемещаться по локациям - q в нужном месте</li>
-	<li>Текстовое поле с надписью "выбор ответа" - <br> - туда нужно вставлять английскую e<br> в диалоге(возможно будет исправлено позже).</li>
-	<li>Как проходить игру - типа ходите и говорите.</li>
-</ul></div></td><td>
+<body style="color:white">
+<table id="main">
+<tr><td>
+	</td><td id="quest"><span id="1"></span><br><span id="2"></span>
+	</td><td id="sd">
+	</td></tr>
+  <tr>
+    
+		<td><input id="name" placeholder="Имя персонажа"autocomplete="off"><br>
+    <input id="okras" placeholder="Окрас персонажа" autocomplete="off"><br>
+	<span id="female" onclick="female()">Самка</span> \\\\ <span id="male" onclick="male()">Самец</span></td> <td>
+      <table id="chat" style="max-height: 290px;"></tr>
+<tr><td> <div id="mess"></div>
 
-	</td>
-	<td>
-</td></tr><p id="dp" style="text-align: center;">ИГРА СЕЙЧАС РАЗРАБАТЫВАЕТСЯ. ВОЗМОЖНО ПОЯВЛЕНИЕ ПЕРСОНАЖА НЕ В СЮЖЕТНОМ МЕСТЕ И НЕ ИСТИННО СЮЖЕТНЫЕ ПОВОРОТЫ И НЕПРАВИЛЬНЫЕ ИМЕНА. <button onclick="rasr()">ОК</button></p>
-<p style="text-align: center;">Действия<br><button onclick="sniff()">Нюхать воздух</button><br><div id="sniff"> </div></p>
-<audio controls loop>
-  <source src="soundtrack_sad_fairness_slowed.mp3" type="audio/mp3">
-Your browser does not support the audio element.
-</audio>
-
-<canvas id="canvas" style="">Твой браузер не поддерживает canvas. Но зато теперь ты знаешь, что совы держат у себя в дуплах слепых змей.</canvas>
-	  	<div id="game">	<div id="text"></div><input type="text" placeholder="Выбор ответа" id="as"></div>
-<script src="scriptgame.js"></script>
-<div id="vk_like"></div>
-<script type="text/javascript">
-  VK.Widgets.Like("vk_like", {type: "button", height: 22});
-
-</script>
-</script><div id="example_2" style=" display:block; position: absolute; top: 130%; left: 40%;"><div id="log">	<div id='vk_post_-218087544_1'></div></div></div>
-
-<button id="example_2_1" onclick="document.getElementById('example_2').style.display='block'; document.getElementById('example_2_1').style.display='none'; document.getElementById('example_2_2').style.display='block';" style="display:none;">Показать лог игры</button>
-
-<button id="example_2_2" onclick=" document.getElementById('example_2').style.display='none'; document.getElementById('example_2_2').style.display='none'; document.getElementById('example_2_1').style.display='block';">Скрыть лог</button>
+</td>
+</tr>
+<tr><td>
+		<input maxlength="255" size="50" id="text" autocomplete="off"><button id="send" onclick="send()">OK</button>
+</td>
 
 
-<script type="text/javascript">
-   VK.Widgets.Post('vk_post_-218087544_1', -218087544, 1, '5iYsOQoUjq6Ylm6B4pSVZDNLpaHc', {width: 150});
-</script>
-<div id="devel"></div>
-</body>
+</table>
+      
+      
+      
+      
+      
+      
+      </td><td>  Сейчас: <br>
+      <span id="t">холодно</span><br>
+	   <span id="cloud">пасмурно</span><br>
+	<span id="rain">небольшой снегопад и ветер</span><br>
+	<span id="un">неизвестный параметр</span><br>
+      </td>
+    
+    
+    
+    
+  </tr>
+<tr>
+	<td>Информация:<br>
+  Местоположение: <span id="location">где-то</span><br>
+  Голод: есть <span id="eat">не хочется</span><br>
+  Жажда: <span id="drink">пить не хочется</span><br>
+  Здоровье: мне <span id="hp">не больно</span><br>
+  <span id="temp">Мне тепло</span><br>
+
+  
+  
+  </td>	
+  
+  
+  <td id="game"><img id="you" style="position: absolute;"><img id="black" style="position: absolute; left: 280px; top: 230px; width: 100px" src="https://i.ibb.co/TwwwJfK/black.png"></td>
+  
+  
+  
+  
+  
+  <td>    Действия<br>
+  <div id="act"> <button onclick="hear(lok)">Прислушаться</button> </div>
+  
+  
+  </td>
+</tr>
+
+
+</table>
+  </body>
+
+
+
 </html>
