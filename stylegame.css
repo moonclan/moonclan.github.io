@@ -1,0 +1,27 @@
+body {
+  background-color: #1b1e27;
+
+}
+#game td {
+  width: 100px;
+  height: 150px;
+}
+#chat td {
+  background-color: rgb(80, 49, 32);
+  width: 100%;
+
+}
+#main {
+  display: block;
+}
+#game {
+  width: 500px;
+  height: 500px;
+  background-image: url('https://i.ibb.co/B4MWcGP/image.png');
+}
+#mess {
+
+width: 500px;
+height: 150px;
+overflow-y: scroll;
+}  
