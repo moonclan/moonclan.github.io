@@ -3,7 +3,7 @@
 
 <head>
 	<title>ИГрОВаЯ|ПёсМир</title>
-	  <link rel="stylesheet" href="stylegame.css">
+	<link rel="stylesheet" href="stylegame.css">
 </head>
 
 <body style="color:white">
@@ -13,7 +13,7 @@
 	</td><td id="sd">
 	</td></tr>
   <tr>
-    
+    <button id='clearChat' onclick="document.getElementById('mess').innerHTML = ''">Очистить чат</button>
 		<td><input id="name" placeholder="Имя персонажа"autocomplete="off"><br>
     <input id="okras" placeholder="Окрас персонажа" autocomplete="off"><br>
 	<span id="female" onclick="female()">Самка</span> \\\\ <span id="male" onclick="male()">Самец</span></td> <td>
@@ -81,9 +81,6 @@
 </table>
   </body>
 
-
-
-</html>
 
 
 </html>
